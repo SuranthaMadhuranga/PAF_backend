@@ -21,7 +21,7 @@ public class AuthenticationController {
 
     private final AuthenticationService authenticationService;
 
-    @PostMapping("/register")
+    @PostMapping("/register") 
     public ApiSuccessResponse<String> registerUser(@Valid @RequestBody RegisterUserRequest request) {
         authenticationService.registerUser(request);
         return ApiSuccessResponse.<String>builder()
@@ -31,7 +31,7 @@ public class AuthenticationController {
                 .build();
     }
 
-    @PostMapping("/login")
+    @PostMapping("/login") 
     public ApiSuccessResponse<LoginResponse> login(@Valid @RequestBody LoginRequest request) {
         LoginResponse response = authenticationService.login(request);
         return ApiSuccessResponse.<LoginResponse>builder()
